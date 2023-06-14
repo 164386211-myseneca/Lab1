@@ -18,4 +18,11 @@ birth_year = int(input("Enter your birth year: "))
 age = calculate_age(birth_year)
 print("Your age is:", age)
 
+try:
+    birth_year = int(input("Enter your birth year: "))
+    age = calculate_age(birth_year)
+    print("Your age is:", age)
+except ValueError:
+    print("Please enter a valid birth year as an integer.")
+
 helloWorld()
