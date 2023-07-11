@@ -142,7 +142,7 @@ $
 
 1)
   
-    ```
+```
    [dpatel475@LS-73 ~]$ sudo systemctl status apache2
 Unit apache2.service could not be found.
 [dpatel475@LS-73 ~]$ sudo systemctl status mariadb
