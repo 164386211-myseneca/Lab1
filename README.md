@@ -27,6 +27,8 @@ LS-73   STUDENT-RG-964269  canadacentral
 WC-73   STUDENT-RG-964269  canadacentral
 WS-73   STUDENT-RG-964269  canadacentral
 
+
+
 Dhruv@LAPTOP-KI7OIOKF MINGW64 ~/Desktop/CSN 400 github-Azure/CSN400-Capstone-Public/CP8-Scripts/bash-scripts (main)
 $ az network nsg list --output table
 Location       Name        ProvisioningState    ResourceGroup      ResourceGuid
@@ -41,9 +43,18 @@ canadacentral  WC-NSG-73   Succeeded            Student-RG-964269  58d7712e-5eb6
 canadacentral  WS-73-nsg   Succeeded            Student-RG-964269  322a0060-bcfe-4ea2-b111-a75af501356c
 canadacentral  WS-NSG-73   Succeeded            Student-RG-964269  7b848a6d-e4f6-46c3-87ca-f8fe8deb33b2
 
+
+
 Dhruv@LAPTOP-KI7OIOKF MINGW64 ~/Desktop/CSN 400 github-Azure/CSN400-Capstone-Public/CP8-Scripts/bash-scripts (main)
 $ az network nic list --output table
-EnableAcceleratedNetworking    EnableIPForwarding    Location       MacAddress         Name    NicType    Primary    ProvisioningState    ResourceGroup      ResourceGuid                       
+EnableAcceleratedNetworking    EnableIPForwarding    Location       MacAddress         Name    NicType    Primary    ProvisioningState    ResourceGroup      ResourceGuid                          VnetEncryptionSupported
+-----------------------------  --------------------  -------------  -----------------  ------  ---------  ---------  -------------------  -----------------  ------------------------------------  -------------------------
+False                          True                  canadacentral  00-22-48-B2-19-92  lr-73   Standard   True       Succeeded            Student-RG-964269  6491259c-becd-4e9b-9d96-fe8c4a7d422c  False
+False                          False                 canadacentral  60-45-BD-62-18-4E  ls-73   Standard   True       Succeeded            Student-RG-964269  4f0b3736-eff2-40bb-a178-1d84f3b715c6  False
+False                          False                 canadacentral  60-45-BD-5B-DB-19  wc-73   Standard   True       Succeeded            Student-RG-964269  a35b7dc6-5c22-4f6c-a5c0-973d619ce544  False
+False                          False                 canadacentral  60-45-BD-5F-E9-FE  ws-73   Standard   True       Succeeded            Student-RG-964269  9a15cf7d-7fa2-4bd3-8868-0bbefacf8cf7  False
+
+
 $ az disk list --output table
 Name                                             ResourceGroup      Location       Zones    Sku              OsType    SizeGb    ProvisioningState
 -----------------------------------------------  -----------------  -------------  -------  ---------------  --------  --------  -------------------
