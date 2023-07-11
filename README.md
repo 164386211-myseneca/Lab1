@@ -201,7 +201,7 @@ Add this to your `README.md` and make sure to update `Student-RG-xxxxxx` with yo
 
 | No. | Scope | Chart Type | VIEW Type |  Date Range | Group By | Granularity| Example |
 |-|-|-|-|-|-|-|-|
-|1|Student-RG-964269| Column (Stacked) | DailyCosts | Last 7 Days | Resource | Daily | <img src="./images/daily-cost-barchart.jpg" alt="Daily Cost Barchart" style="float: left; margin-right: 10px;" /> |
+|1|Student-RG-964269| Column (Stacked) | DailyCosts | Last 7 Days | Resource | Daily | <img src="./photo/0fde3628cd00195e6f59fd88652050f1.jpg" alt="Daily Cost Barchart" style="float: left; margin-right: 10px;" /> |
 |2|Student-RG-964269| Column (Stacked) | DailyCosts | Last 7 Days | Service | Daily | <img src="./images/daily-cost-service-barchart.jpg" alt="Daily Cost Service-Barchart.jpg" style="float: left; margin-right: 10px;" /> |
 |3|Student-RG-964269| Area| AccumulatedCosts | Last 7 Days | Resource | Accumulated | <img src="./images/accumulated-resource-barchart.jpg" alt="Accumulated Resource Barchart" style="float: left; margin-right: 10px;" /> |
 |4|Student-RG-964269| Pie Chart | NA | Last Month | Service Name | NA | <img src="./images/service-name-piechart.jpg" alt="Service Name Piechart" style="float: left; margin-right: 10px;" /> |
