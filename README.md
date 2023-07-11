@@ -65,79 +65,84 @@ WS-73_disk1_ace3523eac894107a00ccee4b5c06217     STUDENT-RG-964269  canadacentra
 
 ```
 
+2) when we create Nic seprate from VM it gives some flexibility and independent management of networking resources and when we delete a VM , Nic is not deleted automatically and we have to delete it seperately if we want. 
 
+3)  yes , when we create VM in the portal ,we can use existing NIC, and this capability allows us to reuse networking configuratrions which we have already setupped. and according to my point of view it is not an limitation when creating vm from portal.
 
-s
+4)  for LR-NSG-73
+   inbound Security Rules:
+AllowVnetInBound: Allows inbound traffic from any source to the Virtual Network.
+AllowAzureLoadBalancerInBound: Allows inbound traffic from the Azure Load Balancer.
+DenyAllInBound: Denies all other inbound traffic.
+    Outbound Security Rules:
+AllowVnetOutBound: Allows outbound traffic from the Virtual Network to any destination within the Virtual Network.
+AllowInternetOutBound: Allows outbound traffic from any source to the Internet.
+DenyAllOutBound: Denies all other outbound traffic.
 
+5)
 
+ ```
+$ az image list --output table
+HyperVGeneration    Location       Name             ProvisioningState    ResourceGroup
+------------------  -------------  ---------------  -------------------  -----------------
+V2                  canadacentral  lr-73-ver-0.0.1  Succeeded            STUDENT-RG-964269
+V2                  canadacentral  ls-73-ver-0.0.1  Succeeded            STUDENT-RG-964269
+V2                  canadacentral  wc-73-ver-0.0.1  Succeeded            STUDENT-RG-964269
+V2                  canadacentral  ws-73-ver-0.0.1  Succeeded            STUDENT-RG-964269
+```
 
-s
-s
-
-s
-s
-
-s
-s
-s
-s
-
-
-
-
-
-
-
-
-
+6
+7
 
 
 ### Basic Connectivity and Linux VMs Firewall Setting
 
 
+1)
+  
+    ```
+   [dpatel475@LS-73 ~]$ sudo systemctl status apache2
+Unit apache2.service could not be found.
+[dpatel475@LS-73 ~]$ sudo systemctl status mariadb
+Unit mariadb.service could not be found.
+[dpatel475@LS-73 ~]$
+```
 
 
+2) 
+The default setting allows all incoming and outgoing traffic (ACCEPT policy) in the INPUT and OUTPUT chains. FORWARD chain has an ACCEPT policy for forwarding traffic.
+the improverments we can do are: 
+Change the INPUT chain policy to DROP or REJECT to deny all incoming traffic by default.
+Allow only necessary services and sources in the INPUT chain using specific rules.
 
-
-s
-s
-s
-s
-s
-s
-s
-s
-s
-
-s
-s
-s
-s
-s
-s
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+3) hostname of LS
+```
+   [dpatel475@LS-73 ~]$ hostnamectl
+   Static hostname: LS-73
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: c30654a8e7de4cd68b942774c4e1ccca
+           Boot ID: 1fcb3b56e7d548ce8caf644690a9c8d6
+    Virtualization: microsoft
+  Operating System: Red Hat Enterprise Linux 8.8 (Ootpa)
+       CPE OS Name: cpe:/o:redhat:enterprise_linux:8::baseos
+            Kernel: Linux 4.18.0-477.10.1.el8_8.x86_64
+      Architecture: x86-64
+```
+hostname of LR 
+```
+[dpatel475@LR-73 ~]$ hostnamectl
+   Static hostname: LR-73.CSN4002234.com
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: c30654a8e7de4cd68b942774c4e1ccca
+           Boot ID: 85013f53541348b3bd4577212892157a
+    Virtualization: microsoft
+  Operating System: Red Hat Enterprise Linux 8.8 (Ootpa)
+       CPE OS Name: cpe:/o:redhat:enterprise_linux:8::baseos
+            Kernel: Linux 4.18.0-477.10.1.el8_8.x86_64
+      Architecture: x86-64
+```
+4) 
 
 ### Azure Cost Analysis Charts
